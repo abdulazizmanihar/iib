@@ -3,7 +3,7 @@
 CREATE COMPUTE MODULE httpGCcheck_Compute
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN		
-		DECLARE Value CHARACTER getCacheValue( 'Map1' ,'Key1');
+		DECLARE Value CHARACTER getCacheValue( InputRoot.JSON.Data.Map ,InputRoot.JSON.Data.Key);
 		SET OutputRoot.JSON.Data.Map = InputRoot.JSON.Data.Map;
 	    SET OutputRoot.JSON.Data.Key = InputRoot.JSON.Data.Key;
 	    SET OutputRoot.JSON.Data.Value = Value;		

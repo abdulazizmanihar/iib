@@ -1,5 +1,5 @@
 
-
+-->mqsicacheadmin DEVNODE2 -c showMapSizes
 CREATE COMPUTE MODULE LoadGlobalCache_Compute
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN
