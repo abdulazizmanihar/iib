@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><br><Maps>
+<Map name="Map1">
+<Entry key="Key1">Value1</Entry>
+</Map>
+<Map name="Map2">
+<Entry key="Key2">Value2</Entry>
+<Entry key="Key3">Value3</Entry>
+</Map></Maps>

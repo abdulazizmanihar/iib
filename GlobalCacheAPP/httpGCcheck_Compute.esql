@@ -1,0 +1,28 @@
+
+
+CREATE COMPUTE MODULE httpGCcheck_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN		
+		DECLARE Value CHARACTER getCacheValue( 'Map1' ,'Key1');
+		SET OutputRoot.JSON.Data.Map = InputRoot.JSON.Data.Map;
+	    SET OutputRoot.JSON.Data.Key = InputRoot.JSON.Data.Key;
+	    SET OutputRoot.JSON.Data.Value = Value;		
+		RETURN TRUE;
+	END;	
+	
+CREATE PROCEDURE getCacheValue(IN chrMapName CHARACTER, IN chrKey CHARACTER) RETURNS CHARACTER
+BEGIN	
+	DECLARE chrResult CHARACTER;
+	SET chrResult = getCacheValueFromWXS(chrMapName,chrKey);
+	IF (TRIM(chrResult) IS NULL OR TRIM(chrResult) ='' ) THEN
+		THROW USER EXCEPTION MESSAGE 2999 VALUES('Failed to retrieve cache') ;
+	END IF;
+	RETURN chrResult;	
+END;
+
+CREATE PROCEDURE getCacheValueFromWXS(IN chrMapName CHARACTER, IN chrKey CHARACTER)
+RETURNS CHARACTER
+LANGUAGE JAVA
+EXTERNAL NAME "Utilities.CacheUtil.getValue";
+
+END MODULE;
