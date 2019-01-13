@@ -30,8 +30,8 @@ public class CacheUtil {
 	/**
 	 * Method to add all the key-value pairs for a map in Global Cache
 	 */	
-	
-	public static Boolean addMap(MbElement elmMap) {
+	//DECLARE refMap REFERENCE TO InputRoot.XMLNSC.*[1];
+	public static Boolean AddUpdateMap(MbElement elmMap) {
 		
 		String strValue = null;
 		String strKey = null;
@@ -40,6 +40,7 @@ public class CacheUtil {
 		
 		try
 		{
+			
 			elmMap = elmMap.getFirstChild();
 			strMapName = elmMap.getValueAsString();
 			

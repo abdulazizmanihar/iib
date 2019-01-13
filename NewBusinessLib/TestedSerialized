@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DFDL xmlns:tns="http://www.ibm.com/dfdl/CommaSeparatedFormat" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ibm.com/dfdl/CommaSeparatedFormat IBMdefined/CommaSeparatedFormat.xsd ">
+  <header>
+    <head_field1 xsi:type="xs:string">head_value1</head_field1>
+    <head_field2 xsi:type="xs:string">head_value2</head_field2>
+    <head_field3 xsi:type="xs:string">head_value3</head_field3>
+  </header>
+  <record>
+    <field1 xsi:type="xs:string">value1</field1>
+    <field2 xsi:type="xs:string">value2</field2>
+    <field3 xsi:type="xs:string">value3</field3>
+  </record>
+</DFDL>
