@@ -1,0 +1,102 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "NewBusinessAPI",
+    "version": "1.0.0",
+    "description": "NewBusinessAPI"
+  },
+  "basePath": "/newbusinessapi/v1",
+  "paths": {
+    "/createPolicy/{policyNumber}": {
+      "post": {
+        "operationId": "postPolicyNumber",
+        "responses": {
+          "200": {
+            "description": "The operation was successful."
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "description": "Insert a policyNumber",
+        "parameters": [
+          {
+            "required": true,
+            "name": "policyNumber",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/NewBusiness"
+            },
+            "description": "The request body for the operation",
+            "required": true
+          },
+          {
+            "name": "quaryParam",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "OAuth",
+            "in": "header",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "NewBusiness": {
+      "type": "object",
+      "properties": {
+        "Prosper": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "fatherName": {
+                "type": "string"
+              },
+              "EmailID": {
+                  "type": "string"
+                }
+          }
+        },
+        "address": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/addressInfo"
+          }
+        }
+      }
+    },
+    "addressInfo": {
+      "type": "object",
+      "properties": {
+        "Line1": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
