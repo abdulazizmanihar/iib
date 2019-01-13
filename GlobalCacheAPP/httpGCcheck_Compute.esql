@@ -7,6 +7,8 @@ CREATE COMPUTE MODULE httpGCcheck_Compute
 		SET OutputRoot.JSON.Data.Map = InputRoot.JSON.Data.Map;
 	    SET OutputRoot.JSON.Data.Key = InputRoot.JSON.Data.Key;
 	    SET OutputRoot.JSON.Data.Value = Value;		
+	    
+	    
 		RETURN TRUE;
 	END;	
 	
@@ -26,3 +28,4 @@ LANGUAGE JAVA
 EXTERNAL NAME "Utilities.CacheUtil.getValue";
 
 END MODULE;
+

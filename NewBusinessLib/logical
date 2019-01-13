@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dfdl xmlns:tns="http://www.ibm.com/dfdl/CommaSeparatedFormat" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ibm.com/dfdl/CommaSeparatedFormat IBMdefined/CommaSeparatedFormat.xsd ">
+  <record>
+    <field1 xsi:type="xs:string">value1</field1>
+    <field2 xsi:type="xs:string">value2</field2>
+    <field3 xsi:type="xs:string">value3</field3>
+  </record>
+</dfdl>
