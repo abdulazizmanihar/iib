@@ -1,100 +1,123 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "title": "NewBusinessAPI",
-    "version": "1.0.0",
-    "description": "NewBusinessAPI"
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "NewBusinessAPI",
+    "version" : "1.0.0",
+    "description" : "NewBusinessAPI"
   },
-  "basePath": "/newbusinessapi/v1",
-  "paths": {
-    "/createPolicy/{policyNumber}": {
-      "post": {
-        "operationId": "postPolicyNumber",
-        "responses": {
-          "200": {
-            "description": "The operation was successful."
+  "basePath" : "/newbusinessapi/v1",
+  "paths" : {
+    "/createPolicy/{policyNumber}" : {
+      "post" : {
+        "operationId" : "createPolicy",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/NewBusinessResp"
+            }
           }
         },
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "description": "Insert a policyNumber",
-        "parameters": [
-          {
-            "required": true,
-            "name": "policyNumber",
-            "in": "path",
-            "type": "string"
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "description" : "Operation to create policy via NewBusiness various",
+        "parameters" : [ {
+          "required" : true,
+          "name" : "policyNumber",
+          "in" : "path",
+          "type" : "string"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "schema" : {
+            "$ref" : "#/definitions/NewBusinessReq"
           },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/NewBusiness"
-            },
-            "description": "The request body for the operation",
-            "required": true
-          },
-          {
-            "name": "quaryParam",
-            "in": "query",
-            "type": "string"
-          },
-          {
-            "name": "OAuth",
-            "in": "header",
-            "type": "string"
-          }
-        ]
+          "description" : "The request body for the operation to create Policy",
+          "required" : true
+        }, {
+          "name" : "OAuth",
+          "in" : "header",
+          "type" : "string",
+          "required": true
+        } ]
       }
     }
   },
-  "definitions": {
-    "NewBusiness": {
-      "type": "object",
-      "properties": {
-        "Prosper": {
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": "string"
+  "definitions" : {
+    "NewBusinessReq" : {
+      "type" : "object",
+      "properties" : {
+        "Prosper" : {
+          "type" : "object",
+          "properties" : {
+            "title" : {
+              "type" : "string"
             },
-            "firstName": {
-              "type": "string"
+            "firstName" : {
+              "type" : "string"
             },
-            "lastName": {
-              "type": "string"
+            "lastName" : {
+              "type" : "string"
             },
-            "fatherName": {
-                "type": "string"
-              },
-              "EmailID": {
-                  "type": "string"
-                }
+            "fatherName" : {
+              "type" : "string"
+            },
+            "EmailID" : {
+              "type" : "string"
+            },
+            "DOB" : {
+              "type" : "string"
+            },
+            "Gender" : {
+              "type" : "string"
+            },
+            "Nationality" : {
+              "type" : "string"
+            },
+            "Resident" : {
+              "type" : "string"
+            },
+            "MaritalStatus" : {
+              "type" : "string"
+            },
+            "Proof" : {
+              "type" : "string"
+            }
           }
         },
-        "address": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/addressInfo"
+        "address" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/addressInfo"
           }
         }
       }
     },
-    "addressInfo": {
-      "type": "object",
-      "properties": {
-        "Line1": {
-          "type": "string"
+    "addressInfo" : {
+      "type" : "object",
+      "properties" : {
+        "Line1" : {
+          "type" : "string"
         },
-        "City": {
-          "type": "string"
+        "City" : {
+          "type" : "string"
         },
-        "State": {
-          "type": "string"
+        "State" : {
+          "type" : "string"
+        }
+      }
+    },
+    "NewBusinessResp" : {
+      "type" : "object",
+      "properties" : {
+        "Code" : {
+          "type" : "string"
+        },
+        "Message" : {
+          "type" : "string"
+        },
+        "Process" : {
+          "type" : "string"
         }
       }
     }
