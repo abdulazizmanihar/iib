@@ -1,0 +1,290 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "NewBusinessAPI",
+    "version" : "1.0.0",
+    "description" : "NewBusinessAPI"
+  },
+  "basePath" : "/newbusinessapi/v1",
+  "paths" : {
+    "/createPolicy/{policyNumber}" : {
+      "post" : {
+        "operationId" : "createPolicy",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/NewBusinessResp"
+            }
+          }
+        },
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "description" : "Operation to create policy via NewBusiness various",
+        "parameters" : [ {
+          "required" : true,
+          "name" : "policyNumber",
+          "in" : "path",
+          "type" : "string"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "schema" : {
+            "$ref" : "#/definitions/NewBusiness"
+          },
+          "description" : "The request body for the operation to create Policy",
+          "required" : true
+        }, {
+          "name" : "OAuth",
+          "in" : "header",
+          "type" : "string",
+          "required" : true
+        } ]
+      }
+    },
+    "/getPolicy/{policyNumber}" : {
+      "get" : {
+        "operationId" : "getPolicy",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/NewBusinessResp"
+            }
+          }
+        },
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "description" : "Operation to get policy via NewBusiness various",
+        "parameters" : [ {
+          "required" : true,
+          "name" : "policyNumber",
+          "in" : "path",
+          "type" : "string"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "schema" : {
+            "$ref" : "#/definitions/NewBusiness"
+          },
+          "description" : "The request body for the operation to get Policy",
+          "required" : true
+        }, {
+          "name" : "OAuth",
+          "in" : "header",
+          "type" : "string",
+          "required" : true
+        } ]
+      }
+    },
+    "/deletePolicy/{policyNumber}" : {
+      "delete" : {
+        "operationId" : "deletePolicy",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/NewBusinessResp"
+            }
+          }
+        },
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "description" : "Operation to delete policy via NewBusiness various",
+        "parameters" : [ {
+          "required" : true,
+          "name" : "policyNumber",
+          "in" : "path",
+          "type" : "string"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "schema" : {
+            "$ref" : "#/definitions/NewBusiness"
+          },
+          "description" : "The request body for the operation to create Policy",
+          "required" : true
+        }, {
+          "name" : "OAuth",
+          "in" : "header",
+          "type" : "string",
+          "required" : true
+        } ]
+      }
+    },
+    "/updatePolicy/{policyNumber}" : {
+      "put" : {
+        "operationId" : "updatePolicy",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/NewBusinessResp"
+            }
+          }
+        },
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "description" : "Operation to update policy via NewBusiness various",
+        "parameters" : [ {
+          "required" : true,
+          "name" : "policyNumber",
+          "in" : "path",
+          "type" : "string"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "schema" : {
+            "$ref" : "#/definitions/NewBusiness"
+          },
+          "description" : "The request body for the operation to create Policy",
+          "required" : true
+        }, {
+          "name" : "OAuth",
+          "in" : "header",
+          "type" : "string",
+          "required" : true
+        } ]
+      }
+    },
+    "/address/{policyNumber}" : {
+      "put" : {
+        "operationId" : "updateAddress",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/NewBusinessResp"
+            }
+          }
+        },
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "description" : "Operation to update policy via NewBusiness various",
+        "parameters" : [ {
+          "required" : true,
+          "name" : "policyNumber",
+          "in" : "path",
+          "type" : "string"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "schema" : {
+            "$ref" : "#/definitions/addressInfo"
+          },
+          "description" : "The request body for the operation to create Policy",
+          "required" : true
+        }, {
+          "name" : "OAuth",
+          "in" : "header",
+          "type" : "string",
+          "required" : true
+        } ]
+      },
+      "get" : {
+        "operationId" : "getAddress",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/addressInfo"
+            }
+          }
+        },
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "description" : "Operation to update policy via NewBusiness various",
+        "parameters" : [ {
+          "required" : true,
+          "name" : "policyNumber",
+          "in" : "path",
+          "type" : "string"
+        }, {
+          "name" : "OAuth",
+          "in" : "header",
+          "type" : "string",
+          "required" : true
+        } ]
+      }
+    }
+  },
+  "definitions" : {
+    "NewBusiness" : {
+      "type" : "object",
+      "properties" : {
+        "Prosper" : {
+          "type" : "object",
+          "properties" : {
+            "title" : {
+              "type" : "string"
+            },
+            "firstName" : {
+              "type" : "string"
+            },
+            "lastName" : {
+              "type" : "string"
+            },
+            "fatherName" : {
+              "type" : "string"
+            },
+            "EmailID" : {
+              "type" : "string"
+            },
+            "DOB" : {
+              "type" : "string"
+            },
+            "Gender" : {
+              "type" : "string"
+            },
+            "Nationality" : {
+              "type" : "string"
+            },
+            "Resident" : {
+              "type" : "string"
+            },
+            "MaritalStatus" : {
+              "type" : "string"
+            },
+            "Proof" : {
+              "type" : "string"
+            }
+          }
+        },
+        "address" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/addressInfo"
+          }
+        }
+      }
+    },
+    "addressInfo" : {
+      "type" : "object",
+      "properties" : {
+        "Line1" : {
+          "type" : "string"
+        },
+        "City" : {
+          "type" : "string"
+        },
+        "State" : {
+          "type" : "string"
+        }
+      }
+    },
+    "NewBusinessResp" : {
+      "type" : "object",
+      "properties" : {
+        "Code" : {
+          "type" : "string"
+        },
+        "Message" : {
+          "type" : "string"
+        },
+        "Process" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
